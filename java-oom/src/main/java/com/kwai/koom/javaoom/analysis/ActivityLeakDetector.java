@@ -69,7 +69,7 @@ public class ActivityLeakDetector extends LeakDetector {
   @Override
   public boolean isLeak(HeapObject.HeapInstance instance) {
     if (VERBOSE_LOG) {
-      KLog.i(TAG, "run isLeak");
+      KLog.i(TAG, "run isLeak class name: " + instance.getInstanceClassName());
     }
 
     activityCounter.instancesCount++;
