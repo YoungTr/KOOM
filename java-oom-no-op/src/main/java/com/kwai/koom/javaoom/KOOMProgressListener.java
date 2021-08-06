@@ -1,7 +1,5 @@
 package com.kwai.koom.javaoom;
 
-import android.app.Application;
-
 /**
  * Copyright 2020 Kwai, Inc. All rights reserved.
  * <p>
@@ -16,37 +14,14 @@ import android.app.Application;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * <p>
- * KOOM library entry point.
  *
  * @author Rui Li <lirui05@kuaishou.com>
  */
-public class KOOM {
+public interface KOOMProgressListener {
 
-  private static KOOM koom;
+    void onProgress(Progress progress);
 
+    enum Progress {
 
-  private KOOM() {}
-
-  /**
-   * KOOM entry point, make sure be called in the main thread!
-   *
-   * @param application application needed
-   */
-  public static void init(Application application) {
-      koom = new KOOM();
-  }
-
-  public static KOOM getInstance() {
-    return koom;
-  }
-
-  public void manualTrigger() {
-    // empty
-  }
-
-  public void setProgressListener(KOOMProgressListener progressListener) {
-    // empty
-  }
-
+    }
 }
