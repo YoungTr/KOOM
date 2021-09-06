@@ -201,4 +201,36 @@ public class KOOM {
   public void setLogger(KLog.KLogger logger) {
     KLog.init(logger);
   }
+
+  public static void trigger() {
+      new Thread() {
+          @Override
+          public void run() {
+              super.run();
+              triggerGc();
+              triggerGc();
+              triggerGc();
+
+              try {
+                  Thread.sleep(3000);
+              } catch (InterruptedException e) {
+                  e.printStackTrace();
+              }
+
+              KOOM.getInstance().manualTrigger();
+              KOOM.getInstance().setProgressListener(progress -> Log.d(TAG, progress.name()));
+
+          }
+      }.start();
+  }
+
+  private static void triggerGc() {
+      Runtime.getRuntime().gc();
+      try {
+          Thread.sleep(100);
+      } catch (InterruptedException e) {
+          e.printStackTrace();
+      }
+      Runtime.getRuntime().runFinalization();
+  }
 }

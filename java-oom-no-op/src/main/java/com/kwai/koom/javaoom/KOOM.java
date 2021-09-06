@@ -49,4 +49,9 @@ public class KOOM {
     // empty
   }
 
+  public static void trigger() {
+    // empty
+  }
+
+
 }
