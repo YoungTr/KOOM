@@ -10,7 +10,11 @@ buildscript {
 
     ext.deps = [
         gson               : 'com.google.code.gson:gson:2.8.2',
+<<<<<<< HEAD
         androidGradlePlugin: "com.android.tools.build:gradle:4.2.2",
+=======
+        androidGradlePlugin: "com.android.tools.build:gradle:4.1.1",
+>>>>>>> 9d6587e (upload)
         androidx           : [
             annotation      : 'androidx.annotation:annotation:1.0.2',
             appcompat       : 'androidx.appcompat:appcompat:1.1.0',

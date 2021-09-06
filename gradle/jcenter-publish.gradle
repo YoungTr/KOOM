@@ -4,7 +4,7 @@ publish {
     userOrg = "androidinternal"
     groupId = "com.kwai.koom"
     artifactId = "${project.getName()}"
-    publishVersion = '1.0.0'
-    repository = "KOOM"
+    publishVersion = '2.0.0'
+    repository = "../output"
     desc = "KOOM"
 }
